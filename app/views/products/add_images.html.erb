@@ -1,0 +1,9 @@
+<%= form_for([@product],url: {:controller=>"products",:action=>"adding_images"}, method: :put) do |f|%>
+<%= f.fields_for :image do |builder|%>
+<tr>
+<td><%= builder.label :photo%></td>
+<td><%= builder.file_field :photo%></td>
+<td><%= f.submit "Save"%></td>
+</tr>
+<%end%>
+<%end%>

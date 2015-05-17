@@ -1,0 +1,12 @@
+<% if @user.to_i==1%>
+<%= "Hi President"%>
+<%end%>
+<% if @user.to_i==2%>
+<%= "Hi Vice-President"%>
+<%end%>
+<% if @user.to_i ==3%>
+<%= "Hi CEo"%>
+<%end%>
+<% if @user.to_i > 4 %>
+<%= "Do not match any records"%>
+<%end%>

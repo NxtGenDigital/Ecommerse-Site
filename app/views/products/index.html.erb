@@ -1,0 +1,17 @@
+<table>
+<p>Today Date is :<%=show_time%></p>
+<% @product.each do |f|%>
+<tr>
+<% f.images.each do |im|%>
+<td><%= image_tag im.photo(:thumb) if !f.images.blank?%></td>
+<%end%>
+<td><%= f.name%></td>
+<td><%= f.description%></td>
+<td><%= f.price%></td>
+<td><%= link_to "Edit",:controller=>"products",:action=>"edit",:id=>f.id%></td>
+<td><%= link_to "Delete",f,:method=>"delete",:data=> {:confirm=>"R you sure!"}%></td>
+<td><%= link_to "Add Images",:controller=>"products",:action=>"add_images",:id=>f.id%></td>
+<td><%= link_to "Buy",:controller=>"products",:action=>"trans",:id=>f.id%></td>
+</tr>
+<%end%>
+</table>

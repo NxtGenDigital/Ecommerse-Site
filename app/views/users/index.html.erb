@@ -1,0 +1,16 @@
+<p>Today Date is :<%=show_time%></p>
+<div class='centre'>
+<table>
+<% @user.each do |f|%>
+<tr>
+<td><%= image_tag f.image.photo(:thumb) if !f.image.blank?%><td>
+<td><%= f.name%></td>
+<td><%= f.email%></td>
+<td><%= link_to "Edit",:controller=>"users",:action=>"edit",:id=>f.id%></td>
+<td><%= link_to "Delete",f,:method=>"delete",:data=> {:confirm=>"R you sure!"}%></td>
+</tr>
+<%end%>
+</table>
+</div>
+
+<!--%= javascript_include_tag %-->

@@ -1,0 +1,17 @@
+<%= fields_for :user do |f|%>
+<%= f.label :first_name%>
+<%= User.find(session[:user_id]).name%>
+<%= f.label :last_name%>
+<%= User.find(session[:user_id]).name%>
+<%= f.label :email%>
+<%= User.find(session[:user_id]).email%>
+<%= f.label :phone%>
+<%= User.find(session[:user_id]).contact_no%>
+<%= f.label :company%>
+<%= f.text_field :company%>
+<%= f.label :credit_card_number%>
+<%= f.text_field :credit_card_number%>
+<%= f.label :expiry_date%>
+<%= f.date_select(:date, :order => [:month, :day, :year])%>
+<%= f.submit "Pay"%>
+<%end%>

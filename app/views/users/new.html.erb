@@ -1,0 +1,27 @@
+<table>
+<%= form_for @user do |f|%>
+<tr>
+<% if @user.errors.any?%>
+<% @user.errors.messages.each do | msg |%>
+<ul>
+<li><%= msg%></li>
+</ul>
+<%end%>
+<%end%>
+</tr>
+<%= render "form",:f=>f%>
+<tr>
+<td><%= f.label :password%></td>
+<td><%= f.password_field :password%></td>
+</tr>
+<%= f.fields_for :image do |builder|%>
+<tr>
+<td><%= builder.label :photo%></td>
+<td><%= builder.file_field :photo%></td>
+</tr>
+<%end%>
+<tr>
+<td><%= f.submit "save"%></td>
+</tr>
+<%end%>
+</table>

@@ -1,0 +1,25 @@
+<table>
+<%= form_for([@user], url: {:controller=>"users",:action=>"login_form_validation"}, method: :put) do |f|%>
+<tr>
+<% if @user.errors.any?%>
+<% @user.errors.messages.each do | msg |%>
+<ul>
+<li><%= msg%></li>
+</ul>
+<%end%>
+<%end%>
+</tr>
+<tr>
+<td><%= f.label :email, "Email*"%></td>
+<td><%= f.text_field :email%></td>
+</tr>
+<tr>
+<td><%= f.label :password, "Password*"%></td>
+<td><%= f.password_field :password%></td>
+</tr>
+<td><%= f.submit "Sign In"%></td>
+<td><%= link_to "Sign Up",:controller=>"users",:action=>"new"%></td>
+<td><a href = '/auth/facebook'>Facebook Login</a></td>
+</tr>
+<%end%>
+</table>
