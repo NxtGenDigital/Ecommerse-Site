@@ -1,9 +1,9 @@
-== README
+# About the project
+Login functionality with facebook, Braintree payment method, And Rails Apis to add product and sell it.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README would normally document whatever steps are necessary to get the application up and running.
 
-# Things you may want to cover:
+# Things covered in this repo:
 
 * Ruby version
 
